@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+.react-multi-carousel-dot button{
+   width: 31px !important;
+   height: 31px !important;
+   height: 30px;
+   border-color: transparent !important;
+}
+.react-multi-carousel-dot--active button{
+   background: #CCFF00 !important;
+}
+.react-multi-carousel-dot-list{
+  height: 30px;
+}

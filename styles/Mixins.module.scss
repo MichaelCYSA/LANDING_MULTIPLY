@@ -1,7 +1,23 @@
+@font-face {
+  font-family: Roboto;
+  src: url('../public/fonts/Roboto-Regular.ttf');
+}
 $light-grey : #E5E5E5;
 $light-green: #CCFF00;
 $grey-blue: #A5C5CE;
-$sizes: ("xs":375px, "sm":576px, "lg":992px, "xl":1215px, 'xxl':1430px);
+$sizes: (
+  "xs":375px, 
+  "sm":576px, 
+  "two_min": 670px,
+  "sml": 780px,
+  "smx": 850px, 
+  "lg":992px, 
+  'lgx': 1100px, 
+  "xl":1215px, 
+  'xxl':1430px , 
+  'xxx': 1730px , 
+  'carousel': 1730px
+  );
 
 @mixin media($minmax, $media) {
     @each $size, $resolution in $sizes {
