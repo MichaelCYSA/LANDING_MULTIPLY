@@ -1,0 +1,278 @@
+@import './Mixins.module.scss';
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('../public/fonts/SpaceGrotesk-VariableFont_wght.ttf');
+}
+@mixin item ($br , $mh , $wd) {
+    width: $wd;
+    margin: 30px;
+    padding: 10px;
+    background: $light-grey;
+    border: $br;
+    border-radius: 25px;
+    min-height: $mh;
+    z-index: 5;
+}
+@mixin decorator ($mr) {
+    width: 100px;
+    height: 5px;
+    margin: $mr;
+    background: $grey-blue;
+}
+@mixin li ($fs, $fw){
+    list-style-type: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: 37px;
+}
+.main{
+    width: 100%;
+    &__section-top{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+.section-top{
+    &__title-wrapper{
+       background-repeat: no-repeat;
+       background-image: url("/green-line.png");
+       width: 650px;
+       height: 145px;
+       background-size: 90%;
+       margin: -30px auto;
+       text-align: center;
+    }
+    &__title{
+       font-family: SpaceGrotesk;
+       font-size: 40px;
+       position: relative;
+       top: 70px;
+       font-weight: 300;
+    }
+    &__items-wrapper{
+        max-width: 1100px;
+        width: 100%;
+        min-width: 800px;
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    &__content{
+        width: 90%;
+        background: $light-green;
+        min-height: 275px;
+        margin: 30px auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    &__item_bordered{
+       @include item(5px solid $grey-blue, 400px, calc(100% / 3 - 60px));
+    }
+    &__item{
+       @include item(5px solid transparent, 400px, calc(100% / 3 - 60px));
+    }
+    &__hint{
+        @include decorator(-20px auto);
+        transform: rotate(-90deg);
+        position: relative;
+        top: -20px;
+        z-index: -1;
+    }
+}
+.item{
+    &__title{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        text-transform: uppercase;
+        @include media("max", "xl") {
+            font-size: 24px;
+        }
+    }
+    &__li{
+        width: 150px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 25px;
+        margin-top: 20px;
+        list-style-type: none;
+        @include media("max", "xl") {
+            font-size: 16px;
+        }
+    }
+    &__hint{
+       @include decorator(20px);
+    }
+}
+.content{
+    &__ul{
+        width: 60%;
+        padding: 20px;
+    }
+    &__li-title{
+       @include li(32px, bold);
+       text-transform: uppercase;
+       @include media("max", "xl") {
+           @include li(24px, bold);
+       }
+    }
+    &__li-subtitle{
+       @include li(18px, bold); 
+       text-align: justify;
+       margin-top: 20px;
+       @include media("max", "xl") {
+           @include li(16px, bold);
+       }
+    }
+    &__li-info{
+        @include li(18px, 300);
+        text-align: justify;
+        @include media("max", "xl") {
+            @include li(16px, 300);
+        }
+    }
+    &__li-bottom-m{
+        @include li(18px, bold);
+        text-align: justify;
+        margin-top: 20px;
+        @include media("max", "xl") {
+            @include li(16px, bold);
+        }
+    }
+    &__li-bottom{
+        @include li(18px, bold);
+        text-align: justify;
+        @include media("max", "xl") {
+            @include li(16px, bold);
+        }
+    }
+    &__div{
+        width: 40%;
+        display: flex;
+        justify-content: right;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    &__arrow{
+        background-image: url('/arrow.svg');
+        width: 340px;
+        height: 120px;
+        background-size: 80%;
+        margin-top: 35px;
+        background-repeat: no-repeat;
+        @include media("max", "xl") {
+            font-size: 260px;
+            height: 100px;
+            background-size: 65%;
+        }
+    }
+    &__h1{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+        margin-top: 70px;
+        line-height: 94px;
+        width: 100%;
+        text-transform: uppercase;
+        @include media("max", "xl") {
+            font-size: 45px;
+        }
+    }
+}
+.blocks{
+   width: 1300px;
+   min-width: 1300px;
+   height: 1040px;
+   background-image: url('/background.svg');
+   background-repeat: no-repeat;
+   background-size: 90%;
+   margin: 40px auto;
+   background-position-y: 70px;
+   background-size: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   @include media("max", "xxl") {
+     width: 1100px;
+     min-width: 1100px;
+   }
+   @include media("max", "xl") {
+     width: 900px;
+     min-width: 900px;
+     height: 1400px;
+   }
+   &__item{
+        width: calc(100% / 4 - 30px);
+        margin: 15px;
+        padding: 10px;
+        background: $light-grey;
+        border: 5px solid transparent;
+        border-radius: 25px;
+        height: 470px;
+        z-index: 5;
+        @include media("max", "xxl") {
+            height: 425px;
+            padding: 5px;
+        }
+        @include media("max", "xl") {
+           width: calc(100% / 3 - 30px)
+        }
+        
+   }
+   &__li{
+        width: 100%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 25px;
+        margin-top: 20px;
+        list-style-type: none;
+        margin-left: -20px;
+        @include media("max", "xxl") {
+           font-size: 16px;
+        }
+   }
+}  
+.section__bottom_title{
+    background-repeat: no-repeat;
+    background-image: url("/green-line.png");
+    width: 1050px;
+    height: 145px;
+    background-size: 60%;
+    margin: -30px auto;
+    text-align: center;
+    background-position: center;
+    @include media("max", "xl") {
+        width: 600px;
+        background-size: 85%;
+    }
+}
+.bottom__title{
+    font-family: SpaceGrotesk;
+    font-size: 40px;
+    position: relative;
+    top: 70px;
+    font-weight: 300;
+    @include media("max", "xl") {
+        font-size: 32px
+    }
+}
+.bottom__title_bold{
+    font-family: SpaceGrotesk;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 51px;
+    margin-top: 130px;
+    @include media("max", "xl") {
+        font-size: 32px;
+        margin-top: 90px;
+    }
+}

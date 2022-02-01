@@ -1,0 +1,123 @@
+@import './Mixins.module.scss';
+
+@font-face {
+    font-family: Six Caps ;
+    src: url('../public/fonts/SixCaps-Regular.ttf');
+}
+@mixin header-wrapper ($tx , $wd) {
+    width: $wd;
+    padding: 5px;
+    text-align: $tx;
+}
+.header{
+    background: $light-grey;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-wrap: nowrap;
+    &__logo{
+        width: 200px;
+        height: 60px;
+        background: #C4C4C4;
+        margin-left: 90px;
+        margin-top: 7.5px;
+    }
+    &__wrapper-left{
+        @include header-wrapper('left', 25%)
+    }
+    &__wrapper-right{
+        @include header-wrapper('right', 75%)
+    }
+}
+.nav{
+    &__ul{
+        text-align: right;
+        width: 90%;
+        margin-right: 10%;
+        @include media("max", "xl") {
+            font-size: 24px;
+            margin: 7.5px 7.5%;
+        }
+    }
+    &__li{
+        display: inline;
+    }
+    &__a{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 34px;
+        margin: 0px 20px;
+        cursor: pointer;
+        @include media("max", "xl") {
+            font-size: 24px;
+            margin: 0px 10px;
+        }
+    }
+    &__button{
+        padding: 5px;
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 34px;
+        line-height: 40px;
+        background: $light-green;
+        border: none;
+        cursor: pointer;
+        @include media("max", "xl") {
+            font-size: 24px;
+        }
+        &:hover &__img{
+            transform: rotate(-180deg);
+        }
+        &__img{
+            margin-top: -10px;
+            position: relative;
+            top: -2px;
+            font-size: 30px;
+            height: 15px;
+            @include media("max", "xl") {
+                height: 12px;
+                top: -1px;
+            }
+            transition: 0.4s transform;
+            left: 2px;
+            @include media("max", "sm") {
+                width: 350px;
+            }
+        }
+    }
+}
+.banner{
+   background: $grey-blue;
+   width: 100%;
+   height: 550px;
+   margin-top: -222px;
+   text-align: center;
+   &__title{
+       text-align: center;
+       font-family: Six Caps;
+       font-weight: normal;
+       margin-top: 222px;
+       font-size: 270px;
+       color: $light-green;
+       letter-spacing: 0.5px;
+       font-stretch: ultra-condensed;
+       position: relative;
+       top: 50px;
+   }
+   &__subtitle{
+       padding: 7.5px 7.5px 7.5px 7.5px;
+       width: 600px;
+       height: 55px;
+       background: $light-green;
+       position: relative;
+       top: -120px;
+       left: -120px;
+       margin: 0 auto;
+       &__a{
+           position: relative;
+           top: -37.5px;
+           font-size: 46px;
+       }
+   }
+}
