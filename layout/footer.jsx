@@ -1,6 +1,17 @@
 import styles from '../styles/Footer.module.scss'
+import {useState} from 'react'
+import Contacts from './contacts';
 
 export default function Footer() {
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__content}>
@@ -13,8 +24,12 @@ export default function Footer() {
                     <li className={styles.content__li}>5.  You need to raise your market share for a greater business evaluation.</li>
                     <li className={styles.content__li_bold}>*These are the most frequent goals, but we are ready for every project.</li>
                 </ul>
-                <button className={styles.content__button}>Let’s discuss it!</button>
+                <button className={styles.content__button} onClick={handleClickOpen}>Let’s discuss it!</button>
             </div>
+            <Contacts
+               open={open}
+               handleClose={handleClose}
+            />
         </footer>
     )
 }

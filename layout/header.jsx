@@ -15,9 +15,9 @@ export default function Header() {
                 <div className={styles['header__wrapper-right']}>
                     <nav className={styles.header__nav}>
                         <ul className={styles.nav__ul}>
-                            <li className={styles.nav__li}><a className={styles.nav__a}>About us</a></li>
-                            <li className={styles.nav__li}><a className={styles.nav__a}>Experience</a></li>
-                            <li className={styles.nav__li}><a className={styles.nav__a}>Pricing</a></li>
+                            <li className={styles.nav__li}><a href={'#experience'} className={styles.nav__a}>About us</a></li>
+                            <li className={styles.nav__li}><a href={'#cases'} className={styles.nav__a}>Our cases</a></li>
+                            <li className={styles.nav__li}><a href={'#parsing'} className={styles.nav__a}>Pricing</a></li>
                             <li className={styles.nav__li}>
                                 <button className={styles.nav__button}>
                                     Contact
@@ -34,18 +34,18 @@ export default function Header() {
             <div className={styles.banner}>
                 <h1 className={styles.banner__title}>MULTIPLY.TODAY</h1>
                 <div className={styles.banner__subtitle}>
-                    <a className={styles.banner__subtitle__a}>your most important partner</a>
+                    <a className={styles.banner__subtitle__a}>we add figures to your amazon business</a>
                 </div>
             </div>
             {
                 open &&
                 <div className={styles.menu}>
                     <ul className={styles.menu__ul}>
-                        <li className={styles.menu__li}><a className={styles.menu__a}>About us</a></li>
-                        <li className={styles.menu__li}><a className={styles.menu__a}>Experience</a></li>
-                        <li className={styles.menu__li}><a className={styles.menu__a}>Pricing</a></li>
+                        <li className={styles.menu__li}><a href={'#experience'} className={styles.menu__a}>About us</a></li>
+                        <li className={styles.menu__li}><a href={'#cases'} className={styles.menu__a}>Our cases</a></li>
+                        <li className={styles.menu__li}><a href={'#parsing'} className={styles.menu__a}>Pricing</a></li>
                         <li className={styles.menu__li}>
-                            <a className={styles.menu__a}>
+                            <a href={'#contacts'} className={styles.menu__a}>
                                 Contact
                             </a>
                         </li>

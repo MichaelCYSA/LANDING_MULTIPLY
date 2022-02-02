@@ -1,7 +1,12 @@
 .main{
     width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
     &__section-top{
         width: 90%;
         margin: 0 auto;
     }
+}
+.content{
+    width: 100%;
 }

@@ -18,7 +18,7 @@
     cursor: pointer;
     border: 3px solid transparent;
     
-    background-size: 50px;
+    background-size: 45px;
     position: absolute;
     right: 30px;
     top: 20px;
@@ -177,19 +177,25 @@
    }
    &__subtitle{
        padding: 7.5px 7.5px 7.5px 7.5px;
-       width: 600px;
+       width: 900px;
        height: 55px;
        background: $light-green;
        position: relative;
        top: -120px;
-       left: -120px;
+       //left: -120px;
        color: #323232;
        margin: 0 auto;
-       @include media("max", "smx") {
+       @include media("max", "lgx") {
+            top: -90px;
+            width: 95%;
+            left: 0;
+            margin: 0 auto;
+       }
+     /*  @include media("max", "smx") {
           top: -90px;
           width: 450px;
           left: 0px;
-       }
+       } */
        &__a{
            position: relative;
            top: -37.5px;

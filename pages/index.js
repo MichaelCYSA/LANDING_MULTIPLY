@@ -6,6 +6,7 @@ import SectionBottom from "../layout/sectionBottom"
 import SectionBottomTwo from "../layout/sectionBottomTwo"
 import Footer from "../layout/footer"
 import styles from '../styles/Main.module.scss'
+import { YMInitializer } from 'react-yandex-metrika';
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
           <SectionBottomTwo/>
           <Footer/>
       </main>
+      <div>
+          <YMInitializer accounts={[87374070]} />
+      </div>
     </React.Fragment>
   )
 }

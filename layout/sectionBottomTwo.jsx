@@ -20,7 +20,10 @@ export default function SectionBottomTwo() {
                     <li className={styles.item__li}>
                         We set up thousands of campaigns and filter dozens of thousands of keywords.
                         These are the deepest and most advanced setup types on the market and definitely,
-                        we do not miss a single client’ search inquiry. It is better to do more than less.
+                        we do not miss a single client’ search inquiry. 
+                    </li>
+                    <li className={styles.item__li}>
+                       <b>It's better to do more than less.</b>
                     </li>
                 </ul>
             </div>
@@ -38,16 +41,16 @@ export default function SectionBottomTwo() {
                     <li className={styles.item__li}><b>We require only your goals - the rest is our job.</b></li>
                 </ul>
             </div>
-            <div className={styles.container__item_2}>
+            <div id={'parsing'} className={styles.container__item_2}>
                 <h1 className={styles.item_2__title}>Pricing:</h1>
                 <div className={styles.item_2__decor}>
                     <h1 className={styles.item_2__decor_text1}>0.5$</h1>
                     <h1 className={styles.item_2__decor_text2}>Average per unit sold fee.</h1>
                 </div>
                 <p className={styles.item_2__p}>
-                    WE DO NOT charge more than the new value we bring to your business.
+                    <b>WE DO NOT</b> charge more than the new value we bring to your business.
                     <br />
-                    YOU DO NOT PAY if our results are not better than your current ones.
+                    <b>YOU DO NOT PAY</b> if our results are not better than your current ones.
                 </p>
             </div>
             <div className={styles.container__item_3}>

@@ -1,0 +1,102 @@
+@import '../styles/Mixins.module.scss';
+.content{
+    width: 600px;
+    height: 600px;
+    background: white;
+    border-radius: 25px;
+    @include media("max", "smx") {
+        width: 525px;
+        height: auto;
+    }
+}
+.from{
+    width: 90%;
+    margin: 75px auto;
+    display: flex;
+    flex-wrap: wrap;
+    &__formControl{
+        width: calc(100% / 2 - 20px);
+        height: 120px;
+        margin: 0 auto;
+        @include media("max", "smx") {
+            width: calc(100% - 20px);
+        }
+    }
+    &__input{
+        background-color: #fff;
+        border-color: #C9CBD4;
+        border-radius: 4px 4px 4px 4px;
+        font-family: "Eina",Sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border: 2.5px solid $light-grey;
+        min-height: 50px;
+        padding: 5px 14px;
+        width: 100%;
+        &:focus{
+            outline: none;
+            border: 2.5px solid $light-green;
+            transition: 0.4s border;
+        }
+        border-radius: 5px;
+    }
+    &__label{
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 40px;
+        color: #323232;
+
+    }
+    &__btn_div{
+        width: 100%;
+        text-align: center;
+    }
+}
+.title{
+    margin-left: 37px;
+    font-size: 40px;
+}
+.button{
+    width: 150px;
+    height: 55px;
+    background: #F02D3A;
+    border-radius: 18px;
+    border: none;
+    font-family: SpaceGrotesk;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 52px;
+    text-align: justify;
+    padding: 0px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    &:hover{
+        background: #ec4550 ;
+        transition: 0.3s background;
+    }
+}
+.close{
+    margin-top: 40px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: right;
+
+    &__icon{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 20px;
+        cursor: pointer;
+        transform: rotate(180deg);
+        transition: 2s transform;
+        &:hover{
+            transform: rotate(-180deg);
+            
+        }
+    
+        
+    }
+}

@@ -31,15 +31,16 @@ export default function SectionTop() {
                     })
                 }
             </div>
-            <div className={styles['section-top__hint']}>
+            <div id={'experience'} className={styles['section-top__hint']}>
             </div>
             <div className={styles['section-top__content']}>
                 <ul className={styles.content__ul}>
                     <li className={styles['content__li-title']}>EXPERIENCE</li>
-                    <li className={styles['content__li-subtitle']}>We take and dominate the markets competing in the most challenging niches.</li>
-                    <li className={styles['content__li-info']}>&#128504; Product with more ore than 7 competitors in the top 100 BSR in the Patio, Lawn & Garden</li>
-                    <li className={styles['content__li-info']}>&#128504; Product with more than 6 competitors in the top 100 BSR in the Patio, Lawn & Garden</li>
-                    <li className={styles['content__li-info']}>&#128504; 3 competitors in the top 100 BSR in Health & Household</li>
+                    <li className={styles['content__li-subtitle']}>We dominate the markets competing in the most challenging niches.</li>
+                    <li className={styles['content__li-info']}>&#128504; Product with 7+ top 100 BSR competitors in the Patio, Lawn & Garden</li>
+                    <li className={styles['content__li-info']}>&#128504; Product with 6+ top 100 BSR competitors in the Patio, Lawn & Garden</li>
+                    <li className={styles['content__li-info']}>&#128504; Product with 3 top 100 BSR competitors in Health & Household</li>
+                    <li className={styles['content__li-info']}>&#128504; Product with 4+ top 100 BSR competitors in Home & Kitchen</li>
                     <li className={styles['content__li-bottom-m']}>We create monopolies with the best result of 19 positions on the first page.</li>
                     <li className={styles['content__li-bottom']}>We liquidate the excessive or low performing inventory.</li>
                 </ul>

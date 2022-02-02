@@ -18,15 +18,15 @@ export default function SectionBottom() {
             <div className={styles.container__cases}>
                 <div className={styles.cases__wrapper}>
                     <div className={styles.cases__item_1}>
-                        <h1 className={styles.cases__title}>Case 1</h1>
+                        <h1 className={styles.cases__title}>Case 6</h1>
                         <img
                             className={styles.cases__img}
-                            src={'/case001.jpg'}
+                            src={'/case001.png'}
                             onClick={() => {
                                 setModalIsOpen({
                                     index: 2,
                                     img: [
-                                        { source: '/case002.jpg' }
+                                        { source: '/case001.png' }
                                     ]
                                 })
                             }}
@@ -41,22 +41,22 @@ export default function SectionBottom() {
                 </div>
                 <div className={styles.cases__wrapper}>
                     <div className={styles.cases__item_2}>
-                        <h1 className={styles.cases__title}>Case 1</h1>
+                        <h1 className={styles.cases__title}>Case 7</h1>
                         <img
                             className={styles.cases__img}
-                            src={'/case002.jpg'}
+                            src={'/case002.png'}
                             onClick={() => {
                                 setModalIsOpen({
                                     index: 2,
                                     img: [
-                                        { source: '/case002.jpg' }
+                                        { source: '/case002.png' }
                                     ]
                                 })
                             }}
                         />
                         <div className={styles.cases__subtitle_wrapper}>
                             <div className={styles.cases__subtitle_decor}>
-                                <h1 className={styles.cases__decor_text}>5</h1>
+                                <h1 className={styles.cases__decor_text}>9</h1>
                             </div>
                             <h1 className={styles.cases__subtitle}>days of advertising.    11 - five star reviews.</h1>
                         </div>

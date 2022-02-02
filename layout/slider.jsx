@@ -15,22 +15,28 @@ export default function CaseSlider() {
             img: '/case1.png'
         },
         {
-            title: '9 days of advertising.',
-            subtitle: '11 - five star reviews.',
+           title: '9.64% tAcos',
+           subtitle: '80 Days.',
             case: '2',
             img: '/case2.png'
         },
         {
-            title: '9.64% tAcos',
-            subtitle: '80 Days.',
+            title: '12.82% tAcos',
+            subtitle: '60 Days.',
             case: '3',
             img: '/case3.png'
         },
         {
-            title: '14.44% tAcos',
-            subtitle: '70 Days.',
+            title: '12.97% tAcos',
+            subtitle: '35 Days.',
             case: '4',
             img: '/case4.png'
+        },
+        {
+            title: '10.89% tAcos',
+            subtitle: '60 Days.',
+            case: '5',
+            img: '/case5.png'
         }
     ]
     const responsive = {
@@ -56,7 +62,7 @@ export default function CaseSlider() {
     const [modalIsOpen, setModalIsOpen] = useState(null)
     
     return (
-        <div className={styles.container}>
+        <div id={'cases'} className={styles.container}>
             <div className={styles.container__decorator}>      
                 <Carousel 
                     responsive={responsive}
