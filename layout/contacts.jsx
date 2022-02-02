@@ -66,7 +66,7 @@ export default function Contacts({ open, handleClose }) {
     }
     const postForm = () => {
         superagent
-            .post(`https://docs.google.com/forms/d/e/1FAIpQLSdFkAP7y7f101kooNeto_YBSa1ADfLvpJsLwy-PivEdVqPCaQ/viewform`)
+            .post(`https://docs.google.com/forms/d/e/1FAIpQLSdFkAP7y7f101kooNeto_YBSa1ADfLvpJsLwy-PivEdVqPCaQ/formResponse`)
             .type('form')
             .send({
                 'entry.720086727': form.name,
