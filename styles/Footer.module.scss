@@ -1,0 +1,89 @@
+@import './Mixins.module.scss';
+
+.footer{
+    margin-bottom: 100px;
+    width: 100%;
+    margin-top: -200px;
+    
+    @include media("max", "xl") {
+        min-width:  525px;
+        margin-top: -450px;
+    }  
+    @include media("max", "sml") {
+        margin-top: 0px;        
+    } 
+    
+    &__content{
+        width: 1000px;
+        text-align: center;
+        margin: 0 auto;
+        @include media("max", "lgx") {
+            width:  970px;
+            margin: 0 auto;
+        }
+        @include media("max", "lg") {
+            width:  700px;
+            margin: 0 auto;
+        }  
+        @include media("max", "sml") {
+            width:  550px;
+            margin: 0 auto;
+        }  
+        @include media("max", "sm") {
+            width:  450px;
+            margin: 0 auto;
+        }  
+    }
+}
+.content{
+    &__title{
+        font-family: SpaceGrotesk;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 51px;
+    }
+    &__ul{
+        width: 100%;
+        text-align: left;
+    }
+    &__li{
+        list-style: none;
+        font-family: SpaceGrotesk;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 27px;
+        text-align: justify;
+    }
+    &__li_bold{
+        list-style: none;
+        font-family: SpaceGrotesk;
+        font-style: normal;
+        font-size: 21px;
+        line-height: 27px;
+        text-align: justify;
+        font-weight: bold;
+        position: relative;
+        top: 30px;
+    }
+    &__button{
+        width: 364px;
+        height: 74px;
+        left: 779px;
+        top: 7728px;
+        background: #F02D3A;
+        border-radius: 18px;
+        border: none;
+        font-family: SpaceGrotesk;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 41px;
+        line-height: 52px;
+        text-align: justify;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        margin-top: 100px;
+    }
+}

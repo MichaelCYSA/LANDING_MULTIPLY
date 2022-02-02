@@ -9,12 +9,69 @@
     padding: 5px;
     text-align: $tx;
 }
+.burger{
+    display: none;
+    background-image: url('/menu.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    
+    background-size: 50px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    @include media("max", "smx") {
+        display: block;
+    }
+}
+.menu{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    top: 80px;
+    right: 10px;
+    padding: 10px;
+    z-index: 1000;
+    visibility: visible;
+    transition: 0.4s visibility;
+    background: $light-grey;
+    &__ul{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       width: 80%;
+       text-align: center;
+       //margin: 0 auto;
+    }
+    &__li{
+      list-style: none;
+      width: 100%;
+      text-align: center;
+    }
+    &__a{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 40px;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline 5px solid $light-green;
+            transform: 0.5s text-decoration;
+        }
+        color: #323232;
+    }
+}
 .header{
     background: $light-grey;
     width: 100%;
     height: 90px;
     display: flex;
     flex-wrap: nowrap;
+    min-width: 525px;
     &__logo{
         width: 200px;
         height: 60px;
@@ -23,10 +80,13 @@
         margin-top: 7.5px;
     }
     &__wrapper-left{
-        @include header-wrapper('left', 25%)
+        @include header-wrapper('left', 25%);
     }
     &__wrapper-right{
-        @include header-wrapper('right', 75%)
+        @include header-wrapper('right', 75%);
+        @include media("max", "smx") {
+            display: none;
+        }
     }
 }
 .nav{
@@ -47,6 +107,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 34px;
+        color: #323232;
         margin: 0px 20px;
         cursor: pointer;
         @include media("max", "xl") {
@@ -60,6 +121,7 @@
         font-weight: normal;
         font-size: 34px;
         line-height: 40px;
+        color: #323232;
         background: $light-green;
         border: none;
         cursor: pointer;
@@ -88,11 +150,15 @@
     }
 }
 .banner{
+   min-width: 525px;
    background: $grey-blue;
    width: 100%;
    height: 550px;
    margin-top: -222px;
    text-align: center;
+   @include media("max", "smx") {
+       height: 300px;
+   }
    &__title{
        text-align: center;
        font-family: Six Caps;
@@ -104,6 +170,10 @@
        font-stretch: ultra-condensed;
        position: relative;
        top: 50px;
+       @include media("max", "smx") {
+           font-size: 160px;
+           top: 0;
+       }
    }
    &__subtitle{
        padding: 7.5px 7.5px 7.5px 7.5px;
@@ -113,11 +183,21 @@
        position: relative;
        top: -120px;
        left: -120px;
+       color: #323232;
        margin: 0 auto;
+       @include media("max", "smx") {
+          top: -90px;
+          width: 450px;
+          left: 0px;
+       }
        &__a{
            position: relative;
            top: -37.5px;
            font-size: 46px;
+           @include media("max", "smx") {
+              font-size: 34px;
+              top: -27px;
+           }
        }
    }
 }

@@ -14,9 +14,12 @@ $sizes: (
   "lg":992px, 
   'lgx': 1100px, 
   "xl":1215px, 
+  "xlx": 1310px,
   'xxl':1430px , 
+  'xxd':1511px ,
   'xxx': 1730px , 
-  'carousel': 1730px
+  'carousel': 1730px,
+  'big': 1850px
   );
 
 @mixin media($minmax, $media) {

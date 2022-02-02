@@ -12,6 +12,10 @@
     border-radius: 25px;
     min-height: $mh;
     z-index: 5;
+    @include media("max", "sml") {
+       margin: 5px;
+     }
+    
 }
 @mixin decorator ($mr) {
     width: 100px;
@@ -28,6 +32,7 @@
     line-height: 37px;
 }
 .section-top{
+    min-width: 525px;
     &__title-wrapper{
        background-repeat: no-repeat;
        background-image: url("/green-line.png");
@@ -36,6 +41,10 @@
        background-size: 90%;
        margin: -30px auto;
        text-align: center;
+       @include media("max", "smx") {
+          width: 500px;
+          background-size: 85%;
+       }
     }
     &__title{
        font-family: SpaceGrotesk;
@@ -43,6 +52,10 @@
        position: relative;
        top: 70px;
        font-weight: 300;
+       @include media("max", "smx") {
+         font-size: 32px;
+         top: 50px;
+       }
     }
     &__items-wrapper{
         max-width: 1100px;
@@ -51,20 +64,42 @@
         margin: 50px auto;
         display: flex;
         flex-wrap: nowrap;
+        @include media("max", "sml") {
+            flex-wrap: wrap;
+            min-width: 500px;
+            width: 500px;
+            justify-content: center;
+         }
     }
     &__content{
-        width: 90%;
+        width: 1300px;
         background: $light-green;
         min-height: 275px;
         margin: 30px auto;
         display: flex;
         flex-wrap: nowrap;
+        @include media("max", "xlx") {
+            width: 1050px;
+        }
+        @include media("max", "lgx") {
+            width: 97%;
+        }
+        @include media("max", "smx") {
+            flex-wrap: wrap;
+        }
     }
     &__item_bordered{
        @include item(5px solid $grey-blue, 400px, calc(100% / 3 - 60px));
+       @include media("max", "sml") {
+          @include item(5px solid transparent, 400px, calc(100% / 2 - 10px));
+       }
+       
     }
     &__item{
        @include item(5px solid transparent, 400px, calc(100% / 3 - 60px));
+       @include media("max", "sml") {
+          @include item(5px solid transparent, 400px, calc(100% / 2 - 10px));
+       }
     }
     &__hint{
         @include decorator(-20px auto);
@@ -106,6 +141,12 @@
     &__ul{
         width: 60%;
         padding: 20px;
+        @include media("max", "lgx") {
+            width: 70%;
+        }
+        @include media("max", "smx") {
+            width: 100%;
+        }
     }
     &__li-title{
        @include li(32px, bold);
@@ -113,6 +154,13 @@
        @include media("max", "xl") {
            @include li(24px, bold);
        }
+       @include media("max", "xlx") {
+        font-size: 14px;
+       }
+       @include media("max", "smx") {
+         font-size: 16px;
+       }
+       
     }
     &__li-subtitle{
        @include li(18px, bold); 
@@ -121,12 +169,24 @@
        @include media("max", "xl") {
            @include li(16px, bold);
        }
+       @include media("max", "xlx") {
+        font-size: 14px;
+       }
+       @include media("max", "smx") {
+        font-size: 16px;
+       }
     }
     &__li-info{
         @include li(18px, 300);
         text-align: justify;
         @include media("max", "xl") {
             @include li(16px, 300);
+        }
+        @include media("max", "xlx") {
+            font-size: 14px;
+        }
+        @include media("max", "smx") {
+            font-size: 16px;
         }
     }
     &__li-bottom-m{
@@ -136,6 +196,12 @@
         @include media("max", "xl") {
             @include li(16px, bold);
         }
+        @include media("max", "xlx") {
+            font-size: 14px;
+        }
+        @include media("max", "smx") {
+            font-size: 16px;
+         }
     }
     &__li-bottom{
         @include li(18px, bold);
@@ -143,6 +209,10 @@
         @include media("max", "xl") {
             @include li(16px, bold);
         }
+        @include media("max", "smx") {
+            font-size: 16px;
+          }
+
     }
     &__div{
         width: 40%;
@@ -150,9 +220,15 @@
         justify-content: right;
         flex-wrap: wrap;
         padding: 20px;
+        @include media("max", "lgx") {
+            width: 30%;
+        }
+        @include media("max", "smx") {
+            width: 100%;
+          }
     }
     &__arrow{
-        background-image: url('/arrow.svg');
+        background-image: url('/arrow.png');
         width: 340px;
         height: 120px;
         background-size: 80%;
@@ -174,6 +250,9 @@
         width: 100%;
         text-transform: uppercase;
         @include media("max", "xl") {
+            font-size: 45px;
+        }
+        @include media("max", "xlx") {
             font-size: 45px;
         }
     }
@@ -200,6 +279,14 @@
      min-width: 900px;
      height: 1400px;
    }
+   @include media("max", "lg") {
+      min-width: 760px;
+      width: 760px;
+   }  
+   @include media("max", "sml") {
+        min-width: 500px;
+        width: 500px;
+   } 
    &__item{
         width: calc(100% / 4 - 30px);
         margin: 15px;
@@ -215,6 +302,13 @@
         }
         @include media("max", "xl") {
            width: calc(100% / 3 - 30px)
+        }
+        @include media("max", "lq") {
+            width: calc(100% / 3 - 10px);
+            margin: 5px;
+        }
+        @include media("max", "sml") {
+            width: calc(100% / 2 - 30px)
         }
         
    }
@@ -234,6 +328,7 @@
    }
 }  
 .section__bottom_title{
+    
     background-repeat: no-repeat;
     background-image: url("/green-line.png");
     width: 1050px;
@@ -246,6 +341,9 @@
         width: 600px;
         background-size: 85%;
     }
+    @include media("max", "sml") {
+        margin-top: 400px;
+     }
 }
 .bottom__title{
     font-family: SpaceGrotesk;
@@ -255,6 +353,9 @@
     font-weight: 300;
     @include media("max", "xl") {
         font-size: 32px
+    }
+    @include media("max", "sml") {
+       font-size: 28px;
     }
 }
 .bottom__title_bold{

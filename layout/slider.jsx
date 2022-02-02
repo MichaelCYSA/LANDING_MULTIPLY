@@ -3,6 +3,8 @@
 import Carousel from "react-multi-carousel";
 import styles from '../styles/Slider.module.scss'
 import "react-multi-carousel/lib/styles.css";
+import CarouselModal, { Modal, ModalGateway } from 'react-images'
+import { useState } from "react";
 
 export default function CaseSlider() {
     const listOfData = [
@@ -50,7 +52,8 @@ export default function CaseSlider() {
           items: 1
         }
       };
-
+    
+    const [modalIsOpen, setModalIsOpen] = useState(null)
     
     return (
         <div className={styles.container}>
@@ -62,15 +65,31 @@ export default function CaseSlider() {
                 >
                      {
                          listOfData.map((el, index) => (
-                            <div onClick={() => console.log('eeedd')} key={index} className={styles.item}>
+                            <div key={index} className={styles.item}>
                                 <div className={styles.item__case}>
                                     <h1 className={styles.item__case_name}>Case {el.case}</h1>
                                 </div>
-                                <img className={styles.item__img} src={el.img} />
+                                <img onClick={() => {
+                                    setModalIsOpen({
+                                        index: index,
+                                        img: [
+                                            {source: el.img}
+                                        ]
+                                    })
+                                }} className={styles.item__img} src={el.img} />
                                 <div className={styles.item__text}>
                                      <h1 className={styles.item__title}>{el.title}</h1>
                                      <h2 className={styles.item__subtitle}>{el.subtitle}</h2>
                                 </div>
+                                <ModalGateway>
+                                    {
+                                        modalIsOpen && modalIsOpen.index === index && (
+                                        <Modal onClose={() => setModalIsOpen(null)}>
+                                            <CarouselModal views={modalIsOpen.img} />
+                                        </Modal>
+                                        )
+                                    }
+                                </ModalGateway>
                             </div>
                          ))
                      }
