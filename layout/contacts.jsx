@@ -32,7 +32,7 @@ export default function Contacts({ open, handleClose }) {
             return { ...prev }
         })
     }
- /*   const postForm = () => {
+    const postForm = () => {
         superagent
             .post(`https://docs.google.com/forms/d/e/1FAIpQLSdFkAP7y7f101kooNeto_YBSa1ADfLvpJsLwy-PivEdVqPCaQ/viewform`)
             .type('form')
@@ -51,7 +51,7 @@ export default function Contacts({ open, handleClose }) {
                     console.log(res.statusCode);
                 }
             });
-    } */
+    } 
     return (
         <BootstrapDialog
             onClose={handleClose}
@@ -63,7 +63,7 @@ export default function Contacts({ open, handleClose }) {
                 <div className={styles.close}>
                     <img onClick={handleClose} className={styles.close__icon} src={'/close.png'} />
                 </div>
-                <form  className={styles.from}>
+                <form  onSubmit={postForm} className={styles.from}>
                     <div className={styles.from__formControl}>
                         <label className={styles.from__label} htmlFor={'name'}>Name</label>
                         <input
