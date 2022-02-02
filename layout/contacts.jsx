@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import styles from '../styles/Contacts.module.scss'
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -13,6 +15,35 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
         padding: theme.spacing(1),
     },
 }));
+
+const BootstrapDialogTitle = (props) => {
+    const { children, onClose, ...other } = props;
+
+    return (
+        <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+            {children}
+            {onClose ? (
+                <IconButton
+                    aria-label="close"
+                    onClick={onClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </DialogTitle>
+    );
+};
+
+BootstrapDialogTitle.propTypes = {
+    children: PropTypes.node,
+    onClose: PropTypes.func.isRequired,
+};
 
 export default function Contacts({ open, handleClose }) {
     const Transition = React.forwardRef(function Transition(props, ref) {
@@ -63,7 +94,7 @@ export default function Contacts({ open, handleClose }) {
                 <div className={styles.close}>
                     <img onClick={handleClose} className={styles.close__icon} src={'/close.png'} />
                 </div>
-                <form  onSubmit={postForm} className={styles.from}>
+                <form onSubmit={postForm} className={styles.from}>
                     <div className={styles.from__formControl}>
                         <label className={styles.from__label} htmlFor={'name'}>Name</label>
                         <input
