@@ -105,14 +105,14 @@
         } 
         @include media("max", "sml") {
             margin-left: 0; 
-            top: 60px;  
+            top: 40px; 
         } 
     }
     &__ul{
-        width: 100%;
+        width: 95%;
     }
     &__ul_2{
-        width: 100%;
+        width: 95%;
         position: relative;
         top: 0px;
     }
