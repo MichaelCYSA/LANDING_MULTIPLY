@@ -49,13 +49,14 @@
     &__li{
       list-style: none;
       width: 100%;
+      margin-top: 25px;
       text-align: center;
     }
     &__a{
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
-        font-size: 21px;
+        font-size: 26px;
         line-height: 40px;
         cursor: pointer;
         &:hover{
@@ -66,7 +67,7 @@
     }
 }
 .header{
-    background: $light-grey;
+   // background: $light-grey;
     width: 100%;
     height: 90px;
     display: flex;
@@ -206,4 +207,12 @@
            }
        }
    }
+}
+.menu_a{
+    max-width: 275px;
+    height: 350px;
+    border-radius: 20px;
+}
+.menu_poper{
+    border-radius: 20px;
 }

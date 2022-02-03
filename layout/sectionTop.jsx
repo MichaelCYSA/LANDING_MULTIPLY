@@ -36,7 +36,7 @@ export default function SectionTop() {
             <div className={styles['section-top__content']}>
                 <ul className={styles.content__ul}>
                     <li className={styles['content__li-title']}>EXPERIENCE</li>
-                    <li className={styles['content__li-subtitle']}>We dominate the markets competing in the most challenging niches.</li>
+                    <li className={styles['content__li-subtitle']}>We compete in the most challenging niches.</li>
                     <li className={styles['content__li-info']}>&#128504; Product with 7+ top 100 BSR competitors in the Patio, Lawn & Garden</li>
                     <li className={styles['content__li-info']}>&#128504; Product with 6+ top 100 BSR competitors in the Patio, Lawn & Garden</li>
                     <li className={styles['content__li-info']}>&#128504; Product with 3 top 100 BSR competitors in Health & Household</li>

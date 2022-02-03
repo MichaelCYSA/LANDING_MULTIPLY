@@ -1,9 +1,18 @@
 import React from 'react'
 import styles from '../styles/Header.module.scss'
 import { useState } from 'react'
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function Header() {
-    const [open, setOpen] = useState(false)
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <React.Fragment>
             <header className={styles.header}>
@@ -27,7 +36,7 @@ export default function Header() {
                         </ul>
                     </nav>
                 </div>
-                <div onClick={() => setOpen(prev => !prev)} className={styles.burger}>
+                <div onClick={handleClick} className={styles.burger}>
 
                 </div>
             </header>
@@ -37,21 +46,29 @@ export default function Header() {
                     <a className={styles.banner__subtitle__a}>we add figures to your amazon business</a>
                 </div>
             </div>
-            {
-                open &&
-                <div className={styles.menu}>
-                    <ul className={styles.menu__ul}>
-                        <li className={styles.menu__li}><a href={'#experience'} className={styles.menu__a}>About us</a></li>
-                        <li className={styles.menu__li}><a href={'#cases'} className={styles.menu__a}>Our cases</a></li>
-                        <li className={styles.menu__li}><a href={'#parsing'} className={styles.menu__a}>Pricing</a></li>
-                        <li className={styles.menu__li}>
-                            <a href={'#contacts'} className={styles.menu__a}>
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                styles={{borderRadius: 25}}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                <div className={styles.menu_a}>
+                <ul className={styles.menu__ul}>
+                    <li className={styles.menu__li}><a onClick={handleClose} href={'#experience'} className={styles.menu__a}>About us</a></li>
+                    <li className={styles.menu__li}><a onClick={handleClose} href={'#cases'} className={styles.menu__a}>Our cases</a></li>
+                    <li className={styles.menu__li}><a onClick={handleClose} href={'#parsing'} className={styles.menu__a}>Pricing</a></li>
+                    <li className={styles.menu__li}>
+                        <a href={'#contacts'} className={styles.menu__a}>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
                 </div>
-            }
+            </Menu>
         </React.Fragment>
     )
 }
