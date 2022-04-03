@@ -43,7 +43,7 @@ export default function Header() {
             <div className={styles.banner}>
                 <h1 className={styles.banner__title}>MULTIPLY.TODAY</h1>
                 <div className={styles.banner__subtitle}>
-                    <a className={styles.banner__subtitle__a}>we add figures to your amazon business</a>
+                    <a className={styles.banner__subtitle__a}>We add figures to your Amazon business</a>
                 </div>
             </div>
             <Menu
